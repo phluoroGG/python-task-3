@@ -24,8 +24,7 @@ def read_points_from_file(filename):
     return points
 
 
-def find_points_max_perimeter(filename):
-    points = read_points_from_file(filename)
+def find_points_max_perimeter(points):
     max_perimeter = 0
     result = []
     for i in range(len(points) - 2):
@@ -44,7 +43,7 @@ def find_points_max_perimeter(filename):
 
 if __name__ == '__main__':
     filename_ = 'input01.txt'
-    points_ = find_points_max_perimeter(filename_)
+    points_ = find_points_max_perimeter(points=read_points_from_file(filename_))
     if points_ is None:
         print('Нет точек, образующих треугольник')
     else:
